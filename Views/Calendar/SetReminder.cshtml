@@ -1,0 +1,47 @@
+﻿@model Calendar.ModelViews.ReminderViewModel
+@{
+    ViewData["Title"] = "Set Reminder";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form asp-action="SetReminder" class="needs-validation" novalidate>
+    <input type="hidden" asp-for="EventId" />
+    <div class="form-group">
+        <label asp-for="Minutes">Minutes before event:</label>
+        <input type="number" asp-for="Minutes" class="form-control" min="0" required />
+        <div class="invalid-feedback">Please provide the number of minutes before the event.</div>
+    </div>
+    <div class="form-group">
+        <label asp-for="Method">Method:</label>
+        <select asp-for="Method" class="form-control">
+            <option value="email">Email</option>
+            <option value="popup">Popup</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Set Reminder</button>
+    <input type="hidden" asp-antiforgery="true" />
+</form>
+
+@section Scripts {
+    <script>
+        (function () {
+            'use strict';
+
+            document.addEventListener('DOMContentLoaded', function () {
+                var forms = document.querySelectorAll('.needs-validation');
+
+                Array.prototype.slice.call(forms).forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
+    </script>
+}

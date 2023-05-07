@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Google.Apis.Calendar.v3.Data.Event>
+@{
+    ViewData["Title"] = "Upcoming Events";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Summary</th>
+            <th>Location</th>
+            <th>Start Time</th>
+            <th>End Time</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var eventItem in Model)
+        {
+            <tr>
+                <td>@eventItem.Summary</td>
+                <td>@eventItem.Location</td>
+                <td>@eventItem.Start.DateTime</td>
+                <td>@eventItem.End.DateTime</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@eventItem.Id" class="btn btn-primary">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@eventItem.Id" class="btn btn-danger">Delete</a>
+                    <a asp-action="SetReminder" asp-route-id="@eventItem.Id" class="btn btn-warning">Set Reminder</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Create" class="btn btn-success">Add New Event</a>

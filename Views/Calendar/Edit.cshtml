@@ -1,0 +1,58 @@
+﻿@model Google.Apis.Calendar.v3.Data.Event
+@{
+    ViewData["Title"] = "Edit Event";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form asp-action="Edit" class="needs-validation" novalidate>
+    <input type="hidden" asp-for="Id" />
+    <div class="form-group">
+        <label asp-for="Summary">Summary:</label>
+        <input asp-for="Summary" class="form-control" required />
+        <div class="invalid-feedback">Please provide a summary.</div>
+    </div>
+    <div class="form-group">
+        <label asp-for="Location">Location:</label>
+        <input asp-for="Location" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Description">Description:</label>
+        <textarea asp-for="Description" class="form-control"></textarea>
+    </div>
+    <div class="form-group">
+        <label asp-for="Start.DateTime">Start Time:</label>
+        <input type="datetime-local" asp-for="Start.DateTime" class="form-control" required />
+        <div class="invalid-feedback">Please provide a start time.</div>
+    </div>
+    <div class="form-group">
+        <label asp-for="End.DateTime">End Time:</label>
+        <input type="datetime-local" asp-for="End.DateTime" class="form-control" required />
+        <div class="invalid-feedback">Please provide an end time.</div>
+    </div>
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+    <input type="hidden" asp-antiforgery="true" />
+</form>
+
+@section Scripts {
+    <script>
+        (function () {
+            'use strict';
+
+            document.addEventListener('DOMContentLoaded', function () {
+                var forms = document.querySelectorAll('.needs-validation');
+
+                Array.prototype.slice.call(forms).forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
+    </script>
+}

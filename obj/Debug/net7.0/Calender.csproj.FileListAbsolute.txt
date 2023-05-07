@@ -1,0 +1,9 @@
+C:\Users\Anas\source\repos\Calender\obj\Debug\net7.0\Calender.csproj.AssemblyReference.cache
+C:\Users\Anas\source\repos\Calender\obj\Debug\net7.0\Calender.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Anas\source\repos\Calender\obj\Debug\net7.0\Calender.AssemblyInfoInputs.cache
+C:\Users\Anas\source\repos\Calender\obj\Debug\net7.0\Calender.AssemblyInfo.cs
+C:\Users\Anas\source\repos\Calender\obj\Debug\net7.0\Calender.csproj.CoreCompileInputs.cache
+C:\Users\Anas\source\repos\Calender\obj\Debug\net7.0\Calender.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Anas\source\repos\Calender\obj\Debug\net7.0\Calender.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Anas\source\repos\Calender\obj\Debug\net7.0\Calender.RazorAssemblyInfo.cache
+C:\Users\Anas\source\repos\Calender\obj\Debug\net7.0\Calender.RazorAssemblyInfo.cs

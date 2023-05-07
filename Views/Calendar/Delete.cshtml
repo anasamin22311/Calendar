@@ -1,0 +1,34 @@
+﻿@model Google.Apis.Calendar.v3.Data.Event
+@{
+    ViewData["Title"] = "Delete Event";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<h4>Are you sure you want to delete this event?</h4>
+
+<table class="table">
+    <tr>
+        <th>Summary</th>
+        <td>@Model.Summary</td>
+    </tr>
+    <tr>
+        <th>Location</th>
+        <td>@Model.Location</td>
+    </tr>
+    <tr>
+        <th>Start Time</th>
+        <td>@Model.Start.DateTime</td>
+    </tr>
+    <tr>
+        <th>End Time</th>
+        <td>@Model.End.DateTime</td>
+    </tr>
+</table>
+
+<form asp-action="DeleteConfirmed" method="post">
+    <input type="hidden" asp-for="@Model.Id" />
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+    <input type="hidden" asp-antiforgery="true" />
+</form>
